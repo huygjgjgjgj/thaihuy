@@ -20,6 +20,7 @@
  */
 
 App::uses('Controller', 'Controller');
+App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
 
 /**
  * Application Controller
@@ -32,4 +33,42 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	public $theme = 'Ace';
+	public $helpers = array('Html', 'Form');
+	public $components = array(
+        'Session',
+        'Auth' => array(
+        	'loginAction' => array(
+        		'admin'=>false,
+        		'controller' => 'admin',
+        		'action' => 'login'
+        	),
+        	'loginRedirect' =>array(
+        		'admin'=>true,
+        		'controller' => 'users',
+        		'action' => 'index'
+        	),
+        	'authenticate' => array(
+        		'Form' => array(
+        			'userModel' => 'User',
+        			'fields' => array(
+        				'username' => 'username',
+        				'password' => 'password'
+                	),
+                	'passwordHasher' => array(
+	                    'className' => 'Simple',
+	                    'hashType' => 'sha256'
+                	)
+        		)
+        	),
+        	'authorize' => array('Controller')
+        )
+    );
+    function beforeFilter(){
+    	$this->Auth->allow('admin_register');
+	   
+	   	$this->set('current_user', $this->Auth->user());//sau khi đăng nhập thành công biến current_user là thông tin user đăng nhập
+	}
+	function isAuthorized(){
+	   	return true;
+	}
 }

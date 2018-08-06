@@ -146,15 +146,15 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-          <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-          <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-          <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-          <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-          <li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-          <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-          <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-          <li><a href="pages/examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
+          <li><a href="admin/invoice"><i class="fa fa-circle-o"></i> Invoice</a></li>
+          <li><a href="admin/profile"><i class="fa fa-circle-o"></i> Profile</a></li>
+          <li><a href="admin/login"><i class="fa fa-circle-o"></i> Login</a></li>
+          <li><a href="admin/register"><i class="fa fa-circle-o"></i> Register</a></li>
+          <li><a href="admin/lockscreen"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
+          <li><a href="admin/404"><i class="fa fa-circle-o"></i> 404 Error</a></li>
+          <li><a href="admin/500"><i class="fa fa-circle-o"></i> 500 Error</a></li>
+          <li><a href="admin/blank"><i class="fa fa-circle-o"></i> Blank Page</a></li>
+          <li><a href="admin/pace"><i class="fa fa-circle-o"></i> Pace Page</a></li>
         </ul>
       </li>
       <li class="treeview">
