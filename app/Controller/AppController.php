@@ -32,19 +32,18 @@ App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-	public $theme = 'Ace';
 	public $helpers = array('Html', 'Form');
 	public $components = array(
         'Session',
         'Auth' => array(
         	'loginAction' => array(
         		'admin'=>false,
-        		'controller' => 'admin',
+        		'controller' => 'users',
         		'action' => 'login'
         	),
         	'loginRedirect' =>array(
         		'admin'=>true,
-        		'controller' => 'users',
+        		'controller' => 'homes',
         		'action' => 'index'
         	),
         	'authenticate' => array(
@@ -64,9 +63,14 @@ class AppController extends Controller {
         )
     );
     function beforeFilter(){
-    	$this->Auth->allow('admin_register');
 	   
 	   	$this->set('current_user', $this->Auth->user());//sau khi đăng nhập thành công biến current_user là thông tin user đăng nhập
+
+        if(substr($this->request->params['action'], 0,6) == 'admin_'){
+            $this->layout = 'admin';
+        }else{
+            $this->Auth->allow($this->request->params['action']);
+        }
 	}
 	function isAuthorized(){
 	   	return true;
