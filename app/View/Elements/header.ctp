@@ -1,5 +1,4 @@
 <header class="main-header">
-
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -224,7 +223,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- <img src="dist/img/" class="user-image" alt="User Image"> -->
               <?php echo $this->Html->image('/templade_admin/dist/img/user2-160x160.jpg', array("class"=>"user-image" , "alt"=>"User Image")); ?>
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs"><?php echo $current_user['username']; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -257,7 +256,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="/logout" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>

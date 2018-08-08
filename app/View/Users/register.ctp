@@ -2,6 +2,7 @@
 <html>
   <head>
     <?php echo $this->element('head'); ?>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
   </head>
 <body class="hold-transition register-page">
 <div class="register-box">
@@ -84,12 +85,12 @@
 <!-- /.register-box -->
 
 <!-- jQuery 3 -->
-<?php echo $this->Html->script('/templade_admin/bower_components/jquery/dist/jquery.min'); ?>
+<?php echo $this->Html->script('jquery.min'); ?>
 <!-- Bootstrap 3.3.7 -->
 <?php echo $this->Html->script('/templade_admin/bower_components/bootstrap/dist/js/bootstrap.min'); ?>
 <!-- iCheck -->
 <?php echo $this->Html->script('/templade_admin/plugins/iCheck/icheck.min'); ?>
-<script>
+<!-- <script>
   $(function () {
     $('input').iCheck({
       checkboxClass: 'icheckbox_square-blue',
@@ -97,6 +98,6 @@
       increaseArea: '20%' // optional
     });
   });
-</script>
+</script> -->
 </body>
 </html>

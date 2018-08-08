@@ -68,6 +68,9 @@ class AppController extends Controller {
 
         if(substr($this->request->params['action'], 0,6) == 'admin_'){
             $this->layout = 'admin';
+            if($this->Auth->user()['role'] != 'R'){
+                echo "Bạn ko có quyền truy cập trang này";die();
+            }
         }else{
             $this->Auth->allow($this->request->params['action']);
         }
@@ -75,4 +78,51 @@ class AppController extends Controller {
 	function isAuthorized(){
 	   	return true;
 	}
+    function TokenRand($sokytu){
+        $mang = array('q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m',
+                        'Q','W','E','R','T','Y','U','I','O','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M',
+                         1,2,3,4,5,6,7,8,9,0 );
+        $kq = '';
+        for ($i = 1; $i<$sokytu; $i++){
+            $kq = $kq.$mang[rand(0,count($mang)-1)];
+        }
+
+        return $kq;
+
+    }
+
+    function checkToken(){
+        $token = md5($this->TokenRand(32));// Tạo token 32 ký tự
+        if(!$this->Session->check('token')){
+            $this->Session->write('token',$token);
+        }else{
+
+        }
+    }
+
+    function checkAdd_Edit(){
+        if ($this->Session->check('add_success')){
+            $add_success = $this->Session->read('add_success');
+        }else{
+            $add_success = '';
+        }
+        if ($this->Session->check('edit_success')){
+            $edit_success = $this->Session->read('edit_success');
+        }else{
+            $edit_success = '';
+        }
+        if ($this->Session->check('delete_success')){
+            $delete_success = $this->Session->read('delete_success');
+        }else{
+            $delete_success = '';
+        }
+        $this->set(array(
+            'edit_success' => $edit_success,
+            'add_success' => $add_success,
+            'delete_success' => $delete_success
+        ));
+        $this->Session->delete('delete_success');
+        $this->Session->delete('add_success');
+        $this->Session->delete('edit_success');
+    }
 }

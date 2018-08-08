@@ -3,7 +3,6 @@
 <head>
     <?php echo $this->element('head'); ?>
     <?php echo $this->Html->css('style'); ?>
-    <?php echo $this->Html->script('jquery.min'); ?>
     <?php echo $this->Html->script('bootstrap.min'); ?>
     <?php echo $this->Html->script('script'); ?>
 </head>
@@ -14,17 +13,25 @@
             <div class="darker-row">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-ms-4 col-md-4">
-                            <div class="higher-line">
-                                Chào Mừng!&nbsp;&nbsp;
+                        <div class="col-xs-12 col-ms-8 col-md-8 menu-left">
+                            <ul>
+                                <li style="margin-left: -60px;"><a href="/"><i class="fa fa-home fa-2x"></i></a></li>
+                                <li><a href="">Laptop</a></li>
+                                <li><a href="">Smarphone</a></li>
+                                <li><a href="">Ipad</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-ms-4 col-md-4 menu-right">
+                            <div class="higher-line">                                
                                 <?php
-                                    if(isset($user)){
-                                        echo '<span>' . $user['username'] . '</span>&nbsp; /';
+                                    if(isset($current_user)){
+                                        echo 'Chào Mừng!&nbsp;&nbsp;<a href="/admin"><span class="username">' . $current_user['username'] . '</span></a>&nbsp; ';
+                                        echo '<span class="user"></a><a href="/register" target="_blank" role="button" data-toggle="modal"> Đăng ký &nbsp;</a>hoặc &nbsp;<a href="/logout" target="_blank" role="button" data-toggle="modal"> Đăng xuất </a></span>';
                                     }else{
-                                        echo '<a href="/login" role="button" data-toggle="modal">Đăng nhập &nbsp;</a> hoặc &nbsp;';
+                                        echo '<span class="user"><a href="/login" role="button" data-toggle="modal">Đăng nhập &nbsp;</a> hoặc &nbsp;<a href="/register" target="_blank" role="button" data-toggle="modal"> Đăng ký </a></span>';
                                     }
                                 ?>
-                                <a href="/register" target="_blank" role="button" data-toggle="modal"> Đăng ký </a>
+                                
                             </div>
                         </div>
                     </div>
@@ -70,7 +77,7 @@
                                     <div class="product-img">
                                         <div class="picture">
                                             <a href="#">
-                                                <img width="310px" height="250px" style="object-fit: contain;" src="'.$product["Product"]["image"].'"/>
+                                                <img width="310px" height="250px" src="'.$product["Product"]["image"].'"/>
                                             </a>
                                         </div>
                                     </div>
@@ -103,6 +110,17 @@
             </div>
         </div>  
     </div>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="pull-right hidden-xs">
+              <b>Version</b> 2.4.0
+            </div>
+            <strong>Copyright &copy; 2014-2016 <a href="https://runsystem.vn">My team Gmo</a>.</strong> All rights
+            reserved.
+        </div>
+    </footer>
+    
+    
     
 </body>
 </html>

@@ -23,9 +23,12 @@
 .higher-line a{
 	color: #3cbcb9;
 }
-.higher-line span{
+.higher-line .username{
 	font-weight: bold;
 	font-size: 20px;
+}
+.higher-line .user{
+	float: right;
 }
 .top-right{
 	line-height: 64px;
@@ -38,44 +41,25 @@
 #header{
 	border: 1px solid #cccccc;
 }
-ul{
+.menu-left ul{
 	list-style: none;
+	margin-bottom: 0px !important;
 }
-.menu a{
-	color: #265f7e;
-}
-.menu a:hover{
-	text-decoration: none;
-	color: #265f7e;
-}
-.menu ul{
-	margin: 0px !important;
-	position: absolute;
-	left: 0px;
-	padding: 0px;
-	display: none;
-	width: 150px !important;
-}
-.menu ul ul{
-	position: absolute;
-	top: 0px;
-	padding: 0px;
-
-}
-.menu li{
-	/* border: 1px solid #000000; */
+.menu-left ul li{	
 	float: left;
-	width: 150px;
-	line-height: 2em;
-	position: relative;
 	text-align: center;
-	background: #f3f3f3;
-	padding: 7px;
 }
-.menu li:hover{
-	background: #28a745;
-	cursor: pointer;
+.menu-left ul li a{
+	display: inline-block;
+	width: 100px;
+	line-height: 55px;
+	font-size: 20px;
+	color: #3cbcb9;
 }
+.menu-left ul li i{
+	line-height: 50px;
+}
+
 .h5, h5{
 	font-size: 15px !important;
 	white-space: nowrap;
@@ -110,4 +94,16 @@ ul{
     text-decoration: none;
     background-color: #fff;
     border: 1px solid #ddd;
+}
+.product_image{
+	width: 100px;
+	height: 66.66px;
+}
+.table{
+	font-size: 17px;
+}
+.main-footer{
+	background: #f3f3f3;
+	margin-left: 0px;
+	padding: 30px 0px;
 }

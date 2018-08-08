@@ -29,6 +29,21 @@
 	Router::connect('/login', array('controller' => 'users', 'action' => 'login'));
 	Router::connect('/logout', array('controller' => 'users', 'action' => 'logout'));
 	Router::connect('/register', array('controller' => 'users', 'action' => 'register'));
+	Router::connect('/admin/list-product.html', array('controller' => 'products', 'action' => 'list_product','admin'=>true));
+	Router::connect('/admin/edit-product-:id.html', array('controller' => 'products', 'action' => 'edit_product','admin'=>true),
+		array(
+	        'pass' => array('id'),
+	        'id' => '[0-9]+'
+    	)
+	);
+	Router::connect('/admin/add-product.html', array('controller' => 'products', 'action' => 'add_product','admin'=>true));
+	Router::connect('/admin/delete-product-:id.html', array('controller' => 'products', 'action' => 'delete_product','admin'=>true),
+		array(
+	        'pass' => array('id'),
+	        'id' => '[0-9]+'
+    	)
+	);
+	
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */

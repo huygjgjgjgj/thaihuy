@@ -1,0 +1,44 @@
+.product_image{
+	width: 100px;
+	height: 66.66px;
+}
+.table-striped tbody tr td{
+    vertical-align: inherit !important;
+    border-bottom: 1px solid #ddd;
+}
+.pagination li span{
+	padding: 0px !important;
+}
+.pagination li span a{
+	display: inline-block;
+	padding: 6px 12px;
+	
+}
+.pagination li span a:hover{
+	text-decoration: none;
+}
+.pagination .current{
+	position: relative;
+    float: left;
+    padding: 6px 12px !important;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.pagination .disabled{
+	position: relative;
+    float: left;
+    padding: 6px 12px !important;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.form-horizontal span{
+    color: red;
+}

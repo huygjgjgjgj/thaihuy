@@ -37,10 +37,7 @@ class UsersController extends AppController
 	}
 
 	public function admin_index(){
-		$user = $this->Auth->user();
-		if($user['role'] != 'R'){
-			echo "Bạn ko có quyền truy cập trang này";die();
-		}
+		$this->set('title','Quan trị website Thái Huy');
 	}
 
 	public function register(){
